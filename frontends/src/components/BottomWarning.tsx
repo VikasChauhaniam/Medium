@@ -1,7 +1,13 @@
 
 import { Link } from 'react-router-dom';
 
-export function BottomWarning({label, buttonText, to}){
+interface Warningprops{
+    label : string,
+    buttonText : string,
+    to         : string
+}
+
+export function BottomWarning({label, buttonText, to}:Warningprops){
     return <div className="text-sm py-2 flex justify-center ">
         <div>
             {label}
