@@ -1,3 +1,4 @@
+import { BlogSKelton } from '../components/BlogsSkelton'
 import { FullBlog } from '../components/FullBlog'
 import {useBlog} from '../hooks'
 import {useParams} from 'react-router-dom'
@@ -13,7 +14,7 @@ export const Blog = () =>{
     // console.log("tj")    
         if(loading){
             return <div>
-                loading...
+                <BlogSKelton/>
             </div>
         }
         if (!blog) {
