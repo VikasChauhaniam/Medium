@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
-
+import {cors} from 'hono/cors'
 import {userRouter} from './routes/user'
 import {blogRouter} from './routes/blog'
 
@@ -12,6 +12,7 @@ export type Environment = {
 
 }
 const app = new Hono<Environment>().basePath('/api/v1')
+app.use('/*', cors())
 
 app.use('/*', async (c, next)=>{
 
